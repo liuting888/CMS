@@ -10,14 +10,14 @@ var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
 
 gulp.task('htmlmin', function() {
-    gulp.src(['src/html/**/*.html', 'index.html'])
+    gulp.src(['src/**/*.html', 'index.html'])
         .pipe(htmlmin({
             collapseWhitespace: true,
             minifyJS: true,
             minifyCSS: true,
             removeComments: true
         }))
-        .pipe(gulp.dest('dist/html'))
+        .pipe(gulp.dest('dist'))
 });
 
 gulp.task('less', function() {
