@@ -1,7 +1,6 @@
 {
   "name": "CMS",
   "version": "1.0.0",
-  "description": "",
   "main": "gulpfile.js",
   "dependencies": {
     "art-template": "^4.12.1",
@@ -9,14 +8,15 @@
     "browserify": "^14.4.0",
     "font-awesome": "^4.7.0",
     "gulp": "^3.9.1",
-    "gulp-concat": "^2.6.1",
     "gulp-clean-css": "^3.8.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-html-replace": "^1.6.2",
     "gulp-htmlmin": "^3.0.0",
     "gulp-less": "^3.3.2",
     "gulp-rename": "^1.2.2",
     "gulp-uglify": "^3.0.0",
-    "jquery-form": "^4.2.1",
     "jquery": "^1.12.4",
+    "jquery-form": "^4.2.1",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
   },
@@ -26,5 +26,14 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liuting888/CMS.git"
+  },
+  "bugs": {
+    "url": "https://github.com/liuting888/CMS/issues"
+  },
+  "homepage": "https://github.com/liuting888/CMS#readme",
+  "description": ""
 }

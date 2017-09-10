@@ -8,16 +8,22 @@ var concat = require('gulp-concat');
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
+var htmlReplace = require('gulp-html-replace');
 
 gulp.task('htmlmin', function() {
     gulp.src(['src/**/*.html', 'index.html'])
+        .pipe(htmlReplace({
+            style: gulp.src('src/html/common/style.html'),
+            aside: gulp.src('src/html/common/aside.html'),
+            header: gulp.src('src/html/common/header.html')
+        }))
         .pipe(htmlmin({
             collapseWhitespace: true,
             minifyJS: true,
             minifyCSS: true,
             removeComments: true
         }))
-        .pipe(gulp.dest('dist'))
+        .pipe(gulp.dest('dist'));
 });
 
 gulp.task('less', function() {
