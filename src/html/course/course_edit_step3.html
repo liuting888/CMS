@@ -16,76 +16,13 @@
             <!-- 头部 -->
             <!-- build:header -->
             <!-- endbuild -->
-            <div class="body course-add">
+            <div id="course-edit3" class="body course-add">
                 <!-- 面包屑 -->
                 <ol class="breadcrumb">
                     <li><a href="javascript:;">课程管理</a></li>
                     <li class="active">课程添加</li>
                 </ol>
-                <div class="steps">
-                   <!-- build:courseEditHeader -->
-                  <!-- endbuild -->
-                  <!-- build:courseEditAside -->
-                  <!-- endbuild -->
-                    <!-- 课时管理 -->
-                    <div class="content">
-                        <!-- 标题 -->
-                        <div class="title">
-                            <h5>课时管理 <small>LESSON MANAGE</small></h5>
-                            <a src="javascript:;" data-toggle="modal" data-target="#chapterModal" class="btn btn-success btn-sm pull-right">
-                                <i class="fa fa-plus"></i>课时
-                            </a>
-                        </div>
-                        <div class="lessons">
-                            <ul class="list-unstyled">
-                                <li>
-                                    <i class="fa fa-file-video-o"></i>
-                                    <span class="order">课时：1</span>
-                                    <span class="name">Git工作原理</span>
-                                    <span class="duration">12:06</span>
-                                    <!-- 操作 -->
-                                    <div class="action pull-right">
-                                        <a href="#chapterModal" class="btn btn-info btn-xs" data-toggle="modal" data-target="#chapterModal">编辑</a>
-                                        <a href="javascript:;" class="btn btn-danger btn-xs">删除</a>
-                                    </div>
-                                </li>
-                                <li>
-                                    <i class="fa fa-file-video-o"></i>
-                                    <span class="order">课时：2</span>
-                                    <span class="name">Git版本管理</span>
-                                    <span class="duration">16:07</span>
-                                    <!-- 操作 -->
-                                    <div class="action pull-right">
-                                        <a href="#chapterModal" class="btn btn-info btn-xs" data-toggle="modal" data-target="#chapterModal">编辑</a>
-                                        <a href="javascript:;" class="btn btn-danger btn-xs">删除</a>
-                                    </div>
-                                </li>
-                                <li>
-                                    <i class="fa fa-file-video-o"></i>
-                                    <span class="order">课时：3</span>
-                                    <span class="name">Git协同开发</span>
-                                    <span class="duration">10:02</span>
-                                    <!-- 操作 -->
-                                    <div class="action pull-right">
-                                        <a href="javascript:;" class="btn btn-info btn-xs" data-toggle="modal" data-target="#chapterModal">编辑</a>
-                                        <a href="javascript:;" class="btn btn-danger btn-xs">删除</a>
-                                    </div>
-                                </li>
-                                <li>
-                                    <i class="fa fa-file-video-o"></i>
-                                    <span class="order">课时：4</span>
-                                    <span class="name">Git共享仓库</span>
-                                    <span class="duration">14:28</span>
-                                    <!-- 操作 -->
-                                    <div class="action pull-right">
-                                        <a href="#chapterModal" class="btn btn-info btn-xs" data-toggle="modal">编辑</a>
-                                        <a href="javascript:;" class="btn btn-danger btn-xs">删除</a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                <!-- 这是一个坑 -->
             </div>
         </div>
     </div>
@@ -157,6 +94,42 @@
         </div>
     </div>
 
+        <!-- 课程编辑第三步模版 -->
+        <script id="course-edit3-tpl" type="text/tpl">
+            <div class="steps">
+                <!-- build:courseEditHeader -->
+                <!-- endbuild -->
+                <!-- build:courseEditAside -->
+                <!-- endbuild -->
+                <!-- 课时管理 -->
+                <div class="content">
+                    <!-- 标题 -->
+                    <div class="title">
+                        <h5>课时管理 <small>LESSON MANAGE</small></h5>
+                        <a src="javascript:;" data-toggle="modal" data-target="#chapterModal" class="btn btn-success btn-sm pull-right">
+                            <i class="fa fa-plus"></i>课时
+                        </a>
+                    </div>
+                    <div class="lessons">
+                        <ul class="list-unstyled">
+                            {{ each lessons lesson i }}
+                            <li>
+                                <i class="fa fa-file-video-o"></i>
+                                <span class="order">课时：{{ i + 1 }}</span>
+                                <span class="name">{{ lesson.ct_name }}</span>
+                                <span class="duration">{{ lesson.ct_video_duration }}</span>
+                                <!-- 操作 -->
+                                <div class="action pull-right">
+                                    <a href="#chapterModal" class="btn btn-info btn-xs" data-toggle="modal">编辑</a>
+                                    <a href="javascript:;" class="btn btn-danger btn-xs">删除</a>
+                                </div>
+                            </li>
+                            {{ /each }}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+          </script>
     <script src="/dist/js/lib.js"></script>
     <script src="/dist/js/course/course_edit_step3.js"></script>
 </body>
