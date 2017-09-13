@@ -5,7 +5,6 @@
   "dependencies": {
     "art-template": "^4.12.1",
     "bootstrap": "^3.3.7",
-    "browserify": "^14.4.0",
     "font-awesome": "^4.7.0",
     "gulp": "^3.9.1",
     "gulp-clean-css": "^3.8.0",
@@ -20,7 +19,9 @@
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "browserify": "^14.4.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
