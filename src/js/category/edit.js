@@ -1,5 +1,7 @@
 require('../common/header.js');
 require('../common/aside.js');
+require('../common/loading.js');
+require('../common/common.js');
 var util = require('../common/util.js');
 var cg_id = util.getSearch('cg_id');
 $.get('/v6/category/edit', { cg_id: cg_id }, function(data) {
