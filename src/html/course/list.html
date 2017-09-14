@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>学IT - 后台管理系统</title>
     <!-- build:style -->
     <!-- endbuild -->
 </head>
+
 <body>
     <!-- 侧边栏 -->
-      <!-- build:aside -->
+    <!-- build:aside -->
     <!-- endbuild -->
     <!-- 主体 -->
     <div class="main">
         <div class="container-fluid">
             <!-- 头部 -->
-             <!-- build:header -->
+            <!-- build:header -->
             <!-- endbuild -->
             <!-- 客户列表 -->
             <div class="body course-list">
@@ -24,40 +26,41 @@
                     <li class="active">课程列表</li>
                 </ol>
                 <div id="course-list" class="courses">
-                 <!-- 这是一个坑 -->
+                    <!-- 这是一个坑 -->
                 </div>
             </div>
         </div>
     </div>
 
-  <script id="course-list-tpl" type="text/tpl">
-    {{each $data course i}}
-    <div class="course">
-        <div class="pic">
-            <img src="{{ course.cs_cover || '/public/img/course.png' }}" alt="">
+    <script id="course-list-tpl" type="text/tpl">
+        {{each $data course i}}
+        <div class="course">
+            <div class="pic">
+                <img src="{{ course.cs_cover || '/public/img/course.png' }}" alt="">
+            </div>
+            <div class="info">
+                <a href="/dist/html/course/course_edit_step1.html?cs_id={{ course.cs_id }}">{{course.cs_name}}</a>
+                <ul class="list-unstyled">
+                    <li>
+                        <span>{{course.tc_name}}</span>
+                        <span>{{course.cg_name}}</span>
+                    </li>
+                    <li>
+                        <span>课时：32</span>
+                        <span>学员：9823</span>
+                    </li>
+                    <li>
+                        <span>浏览：11313</span>
+                        <span></span>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div class="info">
-            <a href="/dist/html/course/edit1.html?cs_id={{ course.cs_id }}">{{course.cs_name}}</a>
-            <ul class="list-unstyled">
-                <li>
-                    <span>{{course.tc_name}}</span>
-                    <span>{{course.cg_name}}</span>
-                </li>
-                <li>
-                    <span>课时：32</span>
-                    <span>学员：9823</span>
-                </li>
-                <li>
-                    <span>浏览：11313</span>
-                    <span></span>
-                </li>
-            </ul>
-        </div>
-    </div>
-    {{/each}}
-</script>
+        {{/each}}
+    </script>
 
-<script src="/dist/js/lib.js"></script>
-<script src="/dist/js/course/list.js"></script>
+    <script src="/dist/js/lib.js"></script>
+    <script src="/dist/js/course/list.js"></script>
 </body>
+
 </html>
